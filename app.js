@@ -8,7 +8,12 @@ function Book(title, author, pages, read) {
 	this.pages = pages
 	this.read = read
 	this.info = function () {
-		return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
+		return `<article class="single-book">
+			<h2 class="el title">${this.title}</h2>
+			<h4 class="el author">${this.author}</h4>
+			<p class="el pages">${this.pages}</p>
+			<p class="el read">${this.read}</p></p>
+		</article>`
 	}
 }
 
@@ -18,10 +23,26 @@ const theMetro2033 = new Book(
 	321,
 	'have read already'
 )
+const generationP = new Book(
+	'Generation P',
+	'Viktor Pelevin',
+	260,
+	'have read already'
+)
+
+const theWorm = new Book('The Worm', 'John Faulse', 500, 'not read yet')
 
 function addBookToLibrary(book) {
 	myLibrary.push(book)
 }
 
+function displayEachBook() {
+	myLibrary.forEach(book => {
+		document.body.innerHTML += book.info()
+	})
+}
+
 addBookToLibrary(theMetro2033)
-console.log(myLibrary)
+addBookToLibrary(generationP)
+addBookToLibrary(theWorm)
+displayEachBook()
