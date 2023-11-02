@@ -35,14 +35,53 @@ body {
 }
 
 .modal {
-	width: 60vw;
-	height: 70vh;
+	width: 20vw;
+	height: 60vh;
 	border-radius: 8px;
 	padding: 1%;
-	z-index: 2;
 	background-color: blueviolet;
 	margin: 0 auto;
-	margin-top: 8%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal .form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.modal .form label {
+	margin: 1%;
+}
+
+.modal .form input {
+	margin: 1%;
+	height: 1.5rem;
+}
+
+.modal button {
+	width: 70%;
+	border-radius: 8px;
+	border: none;
+	margin: 3%;
+	align-self: center;
+	padding: 1%;
+}
+
+.readForm {
+	display: flex;
+	align-items: center;
+}
+
+#readForm {
+	margin-left: 5%;
+}
+
+.modal::backdrop {
+	background-color: aquamarine;
+	opacity: 0.5;
 }
 
 .closeModal {
