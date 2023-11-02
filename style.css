@@ -83,3 +83,17 @@ body {
 .closeModal {
 	background-color: red;
 }
+
+.read {
+	background-color: greenyellow;
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+}
+
+.notRead {
+	background-color: red;
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+}
