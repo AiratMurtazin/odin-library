@@ -4,6 +4,14 @@ const myLibrary = []
 const modal = document.querySelector('.modal')
 const openModal = document.querySelector('.new-book')
 const closeModal = document.querySelector('.closeModal')
+
+const titleForm = document.getElementById('titleForm').value
+const authorForm = document.getElementById('authorForm').value
+const pagesForm = document.getElementById('pagesForm').value
+const readForm = document.getElementById('readForm').value
+
+const submitBtn = document.querySelector('.submitForm')
+const bookForm = document.querySelector('.book-form')
 function Book(title, author, pages, read) {
 	this.title = title
 	this.author = author
@@ -14,7 +22,7 @@ function Book(title, author, pages, read) {
 			<h2 class="el title">${this.title}</h2>
 			<h4 class="el author">${this.author}</h4>
 			<p class="el pages">${this.pages}</p>
-			<p class="el read">${this.read}</p></p>
+			<p class="el read">${this.read ? 'Have read already' : 'Not read yet'}</p></p>
 		</article>`
 	}
 }
@@ -25,6 +33,7 @@ const theMetro2033 = new Book(
 	321,
 	'have read already'
 )
+
 const generationP = new Book(
 	'Generation P',
 	'Viktor Pelevin',
@@ -44,16 +53,26 @@ function displayEachBook() {
 	})
 }
 
-// addBookToLibrary(theMetro2033)
-// addBookToLibrary(generationP)
-// addBookToLibrary(theWorm)
-
+// addBookToLibrary(new Book(...['The Sun', 'Ernest Heminguay', 200, true]))
 openModal.addEventListener('click', () => {
 	modal.showModal()
 })
 
 closeModal.addEventListener('click', () => {
 	modal.close()
-	console.log('hui tebe')
 })
-displayEachBook()
+
+submitBtn.addEventListener('click', e => {
+	e.preventDefault()
+
+	console.log('Submit button clicked')
+	addBookToLibrary(
+		new Book(
+			document.getElementById('titleForm').value,
+			document.getElementById('authorForm').value,
+			+document.getElementById('pagesForm').value,
+			document.getElementById('readForm').checked
+		)
+	)
+	displayEachBook()
+})
