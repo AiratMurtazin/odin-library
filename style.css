@@ -21,6 +21,10 @@ body {
 	padding: 2% 0;
 }
 
+.new-book {
+	padding: 0.5%;
+	cursor: pointer;
+}
 .title {
 }
 .author {
@@ -28,4 +32,19 @@ body {
 .pages {
 }
 .read {
+}
+
+.modal {
+	width: 60vw;
+	height: 70vh;
+	border-radius: 8px;
+	padding: 1%;
+	z-index: 2;
+	background-color: blueviolet;
+	margin: 0 auto;
+	margin-top: 8%;
+}
+
+.closeModal {
+	background-color: red;
 }
