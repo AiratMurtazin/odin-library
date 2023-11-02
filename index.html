@@ -10,22 +10,23 @@
 	<body>
 		<button class="new-book">NEW BOOK</button>
 		<dialog class="modal">
-				<form class="form" method="dialog">
-					<h3>Be aware to fill each position!</h3>
-						<form class="form">
-						<label for='titleForm'>Title</label>
-						<input type="text" name="titleForm" id="titleForm"  required/>
-						<label for='authorForm'>Author</label>
-						<input type="text" name="authorForm" id="authorForm"  required/>
-						<label for='pagesForm'>Pages</label>
-						<input type="text" name="pagesForm" id="pagesForm"  required/>
-						<label for='pagesForm'>Pages</label>
-						<input type="text" name="pagesForm" id="pagesForm"  required/>
-						<label for='readForm' class="readForm">Have you read it?
-						<input type="checkbox" name="readForm" id="readForm"  /></label>
-						<button type="submit" class="submit">Add</button>
-						<button class="closeModal">Close</button>
-				</form>
+			<form class="book-form" method="dialog">
+				<h3>Be aware to fill each position!</h3>
+
+				<label for="titleForm">Title</label>
+				<input type="text" name="titleForm" id="titleForm" />
+				<label for="authorForm">Author</label>
+				<input type="text" name="authorForm" id="authorForm" />
+				<label for="pagesForm">Pages</label>
+				<input type="text" name="pagesForm" id="pagesForm" />
+
+				<label for="readForm" class="readForm"
+					>Have you read it?
+					<input type="checkbox" name="readForm" id="readForm"
+				/></label>
+				<button type="submit" class="submitForm">Add</button>
+				<button class="closeModal">Close</button>
+			</form>
 		</dialog>
 	</body>
 </html>

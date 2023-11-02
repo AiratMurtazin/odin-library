@@ -40,23 +40,23 @@ body {
 	border-radius: 8px;
 	padding: 1%;
 	background-color: blueviolet;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.modal .form {
+.modal .book-form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-.modal .form label {
+.modal .book-form label {
 	margin: 1%;
 }
 
-.modal .form input {
+.modal .book-form input {
 	margin: 1%;
 	height: 1.5rem;
 }
@@ -68,6 +68,10 @@ body {
 	margin: 3%;
 	align-self: center;
 	padding: 1%;
+}
+
+.modal button:active {
+	scale: 0.9;
 }
 
 .readForm {

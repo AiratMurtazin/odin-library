@@ -1,9 +1,9 @@
 'use strict'
 
 const myLibrary = []
-const openModal = document.querySelector('.new-book')
 const modal = document.querySelector('.modal')
-// const closeModal = document.querySelector('.modal')
+const openModal = document.querySelector('.new-book')
+const closeModal = document.querySelector('.closeModal')
 function Book(title, author, pages, read) {
 	this.title = title
 	this.author = author
@@ -49,29 +49,11 @@ function displayEachBook() {
 // addBookToLibrary(theWorm)
 
 openModal.addEventListener('click', () => {
-	// const modal = document.createElement('dialog')
-	// modal.innerHTML = `
-	// <h3>Be aware to fill each position!</h3>
-	// <form>
-	// <label for='titleForm'>Title</label>
-	// <input type="text" name="titleForm" id="titleForm"  required/>
-	// <label for='authorForm'>Author</label>
-	// <input type="text" name="authorForm" id="authorForm"  required/>
-	// <label for='pagesForm'>Pages</label>
-	// <input type="text" name="pagesForm" id="pagesForm"  required/>
-	// <label for='pagesForm'>Pages</label>
-	// <input type="text" name="pagesForm" id="pagesForm"  required/>
-	// <label for='readForm'>Have you read it?</label>
-	// <input type="checkbox" name="pagesForm" id="pagesForm"  />
-	// <button type="submit">Add</button>
-	// <button class="closeModal">Close</button>
-	// </form>
-	// `
-	// modal.classList.add('modal')
-	// document.body.appendChild(modal)
 	modal.showModal()
-	closeModal.addEventListener('click', () => {
-		modal.close()
-	})
+})
+
+closeModal.addEventListener('click', () => {
+	modal.close()
+	console.log('hui tebe')
 })
 displayEachBook()
