@@ -1,17 +1,18 @@
 'use strict'
 
 const myLibrary = []
-const modal = document.querySelector('.modal')
+const modal = document.querySelector('.modalWindow')
 const openModal = document.querySelector('.new-book')
 const closeModal = document.querySelector('.closeModal')
 
-const titleForm = document.getElementById('titleForm').value
-const authorForm = document.getElementById('authorForm').value
-const pagesForm = document.getElementById('pagesForm').value
-const readForm = document.getElementById('readForm').value
+// const titleForm = document.getElementById('titleForm').value
+// const authorForm = document.getElementById('authorForm').value
+// const pagesForm = document.getElementById('pagesForm').value
+// const readForm = document.getElementById('readForm').value
 
 const submitBtn = document.querySelector('.submitForm')
 const bookForm = document.querySelector('.book-form')
+
 function Book(title, author, pages, read) {
 	this.title = title
 	this.author = author
@@ -48,8 +49,14 @@ function addBookToLibrary(book) {
 }
 
 function displayEachBook() {
+	const bookContainer = document.getElementById('book-container')
+	bookContainer.innerHTML = ''
+
 	myLibrary.forEach(book => {
-		document.body.innerHTML += book.info()
+		const bookInfo = book.info()
+		const div = document.createElement('div')
+		div.innerHTML = bookInfo
+		bookContainer.appendChild(div)
 	})
 }
 
@@ -58,21 +65,26 @@ openModal.addEventListener('click', () => {
 	modal.showModal()
 })
 
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener('click', e => {
+	e.preventDefault()
 	modal.close()
 })
 
-submitBtn.addEventListener('click', e => {
+bookForm.addEventListener('submit', e => {
 	e.preventDefault()
 
-	console.log('Submit button clicked')
 	addBookToLibrary(
 		new Book(
 			document.getElementById('titleForm').value,
 			document.getElementById('authorForm').value,
-			+document.getElementById('pagesForm').value,
+			document.getElementById('pagesForm').value,
 			document.getElementById('readForm').checked
 		)
 	)
+	modal.close()
 	displayEachBook()
+	document.getElementById('titleForm').value = ''
+	document.getElementById('authorForm').value = ''
+	document.getElementById('pagesForm').value = ''
+	document.getElementById('readForm').checked = false
 })

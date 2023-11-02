@@ -26,7 +26,7 @@ body {
 	cursor: pointer;
 }
 
-.modal {
+.modalWindow {
 	width: 20vw;
 	height: 60vh;
 	border-radius: 8px;
@@ -38,22 +38,22 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-.modal .book-form {
+.modalWindow .book-form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 }
 
-.modal .book-form label {
+.modalWindow .book-form label {
 	margin: 1%;
 }
 
-.modal .book-form input {
+.modalWindow .book-form input {
 	margin: 1%;
 	height: 1.5rem;
 }
 
-.modal button {
+.modalWindow button {
 	width: 70%;
 	border-radius: 8px;
 	border: none;
@@ -62,7 +62,7 @@ body {
 	padding: 1%;
 }
 
-.modal button:active {
+.modalWindow button:active {
 	transform: scale(0.9);
 }
 
