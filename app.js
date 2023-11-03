@@ -6,7 +6,6 @@ const openModal = document.querySelector('.new-book')
 const closeModal = document.querySelector('.closeModal')
 const submitBtn = document.querySelector('.submitForm')
 const bookForm = document.querySelector('.book-form')
-
 function Book(title, author, pages, read) {
 	this.title = title
 	this.author = author
@@ -17,9 +16,9 @@ function Book(title, author, pages, read) {
 			<h2 class="el title">${this.title}</h2>
 			<h4 class="el author">${this.author}</h4>
 			<p class="el pages">${this.pages}</p>
-			<p class="el ${this.read ? 'read' : 'notRead'}">${
+			<button class="el btnRead ${this.read ? 'read' : 'notRead'}">${
 			this.read ? 'Read' : 'Not read'
-		}</p></p>
+		}</button>
 		</article>`
 	}
 }
@@ -36,6 +35,21 @@ function displayEachBook() {
 		const bookInfo = book.info()
 		bookContainer.innerHTML = bookInfo
 		document.body.appendChild(bookContainer)
+	})
+	const readBtn = document.querySelector('.read')
+	const notReadBtn = document.querySelector('.notRead')
+	const btnRead = document.querySelector('.btnRead')
+
+	btnRead.addEventListener('click', () => {
+		if (btnRead.classList.contains('read')) {
+			btnRead.classList.remove('read')
+			btnRead.classList.add('notRead')
+			btnRead.textContent = 'Not read'
+		} else {
+			btnRead.classList.remove('notRead')
+			btnRead.classList.add('read')
+			btnRead.textContent = 'Read'
+		}
 	})
 }
 
@@ -62,17 +76,13 @@ bookForm.addEventListener('submit', e => {
 
 	modal.close()
 	displayEachBook()
+
 	document.getElementById('titleForm').value = ''
 	document.getElementById('authorForm').value = ''
 	document.getElementById('pagesForm').value = ''
 	document.getElementById('readForm').checked = false
 })
 
-function changeRead() {
-	console.log('kak to tak')
-	document.querySelector('.read').classList.remove('read')
-	document.querySelector('.read').classList.add('notRead')
-}
 // const haveRead = document.querySelector('.read')
 // const notHaveRead = document.querySelector('.notRead')
 // haveRead.addEventListener('click', () => {

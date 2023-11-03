@@ -92,7 +92,7 @@ body {
 }
 
 .notRead {
-	background-color: red;
+	background-color: #ff0000;
 	border-radius: 0.5rem;
 	border: none;
 	cursor: pointer;
