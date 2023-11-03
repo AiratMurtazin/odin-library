@@ -82,11 +82,3 @@ bookForm.addEventListener('submit', e => {
 	document.getElementById('pagesForm').value = ''
 	document.getElementById('readForm').checked = false
 })
-
-// const haveRead = document.querySelector('.read')
-// const notHaveRead = document.querySelector('.notRead')
-// haveRead.addEventListener('click', () => {
-// 	console.log('ty nashal')
-// 	haveRead.classList.remove('read')
-// 	haveRead.classList.add('notRead')
-// })
