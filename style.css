@@ -1,11 +1,11 @@
 :root {
-	--primary-bg-color: #40739e;
+	--primary-bg-color: #47b599;
 	--secondary-bg-color: #9c88ff;
-	--header-bg-color: #273c75;
+	--header-bg-color: #a0604c;
 	--text-color: #f5f6fa;
-	--button-bg-color: #273c75;
+	--button-bg-color: #a0604c;
 	--button-text-color: #f5f6fa;
-	--book-border-color: black;
+	--book-border-color: #f5f6fa;
 	--read-bg-color: greenyellow;
 	--not-read-bg-color: #ff0000;
 	--modal-backdrop-color: aquamarine;
@@ -29,11 +29,13 @@ body {
 .single-book {
 	width: 100%;
 	border-radius: 8px;
-	border: 1px solid var(--book-border-color);
+	border: 2px solid var(--book-border-color);
 	padding: 1%;
 	margin: 0.5%;
 	display: grid;
 	grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+	color: var(--text-color);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .single-book button {
@@ -75,7 +77,9 @@ body {
 	height: 60vh;
 	border-radius: 8px;
 	padding: 1%;
-	background-color: var(--secondary-bg-color);
+	background-color: #4b756b;
+	color: var(--book-border-color);
+	border: none;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -105,7 +109,6 @@ body {
 	align-self: center;
 	font-size: 1.3rem;
 	letter-spacing: 2px;
-	color: var(--button-text-color);
 	padding: 3%;
 }
 
