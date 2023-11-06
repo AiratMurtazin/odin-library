@@ -93,3 +93,5 @@ bookForm.addEventListener('submit', e => {
 	bookForm.reset()
 	displayEachBook()
 })
+
+//todo not allow books without author, title or number of pages
