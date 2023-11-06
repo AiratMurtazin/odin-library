@@ -1,3 +1,3 @@
 # odin-library
 
-### [Live Preview](odin-library-for-real.netlify.app)
+### [Live Preview](https://odin-library-for-real.netlify.app)
