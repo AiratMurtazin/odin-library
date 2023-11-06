@@ -19,6 +19,7 @@ function Book(title, author, pages, read) {
 			<button class="el btnRead ${this.read ? 'read' : 'notRead'}">${
 			this.read ? 'Read' : 'Not read'
 		}</button>
+		<button class="removeBook">Remove</button>
 		</article>`
 	}
 }
@@ -33,12 +34,14 @@ function displayEachBook() {
 
 	myLibrary.forEach(book => {
 		const bookInfo = book.info()
-		bookContainer.innerHTML = bookInfo
-		document.body.appendChild(bookContainer)
+		const div = document.createElement('div')
+		div.innerHTML = bookInfo
+		bookContainer.appendChild(div)
 	})
 	const readBtn = document.querySelector('.read')
 	const notReadBtn = document.querySelector('.notRead')
 	const btnRead = document.querySelector('.btnRead')
+	const removeBook = document.querySelector('.removeBook')
 
 	btnRead.addEventListener('click', () => {
 		if (btnRead.classList.contains('read')) {
@@ -50,6 +53,12 @@ function displayEachBook() {
 			btnRead.classList.add('read')
 			btnRead.textContent = 'Read'
 		}
+	})
+
+	removeBook.addEventListener('click', e => {
+		let index = myLibrary.indexOf(e.target.parentNode)
+		myLibrary.splice(index, 1)
+		displayEachBook()
 	})
 }
 
