@@ -32,33 +32,32 @@ function displayEachBook() {
 	const bookContainer = document.getElementById('book-container')
 	bookContainer.innerHTML = ''
 
-	myLibrary.forEach(book => {
+	myLibrary.forEach((book, index) => {
 		const bookInfo = book.info()
 		const div = document.createElement('div')
 		div.innerHTML = bookInfo
 		bookContainer.appendChild(div)
 		const btnRead = div.querySelector('.btnRead')
+		const removeBook = div.querySelector('.removeBook')
 
-		btnRead.addEventListener('click', () => {
-			if (btnRead.classList.contains('read')) {
-				btnRead.classList.remove('read')
-				btnRead.classList.add('notRead')
-				btnRead.textContent = 'Not read'
+		btnRead.addEventListener('click', e => {
+			if (e.currentTarget.classList.contains('read')) {
+				e.currentTarget.classList.remove('read')
+				e.currentTarget.classList.add('notRead')
+				e.currentTarget.textContent = 'Not read'
 			} else {
-				btnRead.classList.remove('notRead')
-				btnRead.classList.add('read')
-				btnRead.textContent = 'Read'
+				e.currentTarget.classList.remove('notRead')
+				e.currentTarget.classList.add('read')
+				e.currentTarget.textContent = 'Read'
 			}
 		})
-	})
-	const readBtn = document.querySelector('.read')
-	const notReadBtn = document.querySelector('.notRead')
-	const removeBook = document.querySelector('.removeBook')
-
-	removeBook.addEventListener('click', e => {
-		let index = myLibrary.indexOf(e.target.parentNode)
-		myLibrary.splice(index, 1)
-		displayEachBook()
+		removeBook.addEventListener('click', e => {
+			let indexToRemove = myLibrary.indexOf(book)
+			if (indexToRemove !== -1) {
+				myLibrary.splice(indexToRemove, 1)
+				displayEachBook()
+			}
+		})
 	})
 }
 

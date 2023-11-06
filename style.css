@@ -1,29 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mooli&family=Oswald:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+	background-color: #40739e;
+	text-align: center;
 }
 
 .single-book {
+	width: 100%;
 	border-radius: 8px;
 	border: 1px solid black;
 	padding: 1%;
 	margin: 0.5%;
+	display: grid;
+	grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+}
+
+.single-book button {
+	align-self: center;
+	justify-self: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40%;
+	height: 70%;
 }
 .el {
 	padding: 2% 0;
 }
 
 .new-book {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 5px;
 	padding: 0.5%;
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	color: #f5f6fa;
+	font-size: 1.3rem;
+	margin: 0 auto;
+}
+
+.new-book .plus-sign {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 3px;
 }
 
 .modalWindow {
@@ -31,7 +60,7 @@ body {
 	height: 60vh;
 	border-radius: 8px;
 	padding: 1%;
-	background-color: blueviolet;
+	background-color: #9c88ff;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -49,17 +78,20 @@ body {
 }
 
 .modalWindow .book-form input {
-	margin: 1%;
-	height: 1.5rem;
+	margin: 3% 0;
+	height: 2.3rem;
 }
 
 .modalWindow button {
-	width: 70%;
+	width: 90%;
 	border-radius: 8px;
 	border: none;
 	margin: 3%;
 	align-self: center;
-	padding: 1%;
+	font-size: 1.3rem;
+	letter-spacing: 2px;
+	color: #353b48;
+	padding: 3%;
 }
 
 .modalWindow button:active {
@@ -72,7 +104,8 @@ body {
 }
 
 #readForm {
-	margin-left: 5%;
+	margin-left: 3%;
+	margin-top: 4%;
 }
 
 .modal::backdrop {
@@ -101,4 +134,46 @@ body {
 .checkboxContainer {
 	display: flex;
 	align-items: center;
+}
+
+.checkboxContainer input {
+	width: 8%;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	gap: 1%;
+	background-color: #273c75;
+	height: 10vh;
+	color: #f5f6fa;
+	padding-left: 15%;
+	box-shadow: -1px 14px 12px 0px rgba(41, 77, 77, 0.2);
+}
+
+.book-form h3 {
+	padding: 2%;
+}
+
+.btnRead,
+.removeBook {
+	padding: 5%;
+}
+
+#book-container {
+	display: grid;
+	align-items: end;
+	justify-content: center;
+	width: 90vw;
+	margin: 0 auto;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 40px;
+}
+
+.removeBook {
+	background-color: #273c75;
+	color: #f5f6fa;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
 }
