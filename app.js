@@ -38,7 +38,7 @@ function addBookToLibrary(book) {
 	myLibrary.push(book)
 }
 
-// Function to display all books in the library
+// Function to display all books in the library\
 function displayEachBook() {
 	bookContainer.innerHTML = ''
 
@@ -64,7 +64,6 @@ function displayEachBook() {
 		})
 	})
 }
-
 // Event listener for opening the modal
 openModal.addEventListener('click', () => {
 	modal.showModal()
