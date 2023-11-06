@@ -37,23 +37,23 @@ function displayEachBook() {
 		const div = document.createElement('div')
 		div.innerHTML = bookInfo
 		bookContainer.appendChild(div)
+		const btnRead = div.querySelector('.btnRead')
+
+		btnRead.addEventListener('click', () => {
+			if (btnRead.classList.contains('read')) {
+				btnRead.classList.remove('read')
+				btnRead.classList.add('notRead')
+				btnRead.textContent = 'Not read'
+			} else {
+				btnRead.classList.remove('notRead')
+				btnRead.classList.add('read')
+				btnRead.textContent = 'Read'
+			}
+		})
 	})
 	const readBtn = document.querySelector('.read')
 	const notReadBtn = document.querySelector('.notRead')
-	const btnRead = document.querySelector('.btnRead')
 	const removeBook = document.querySelector('.removeBook')
-
-	btnRead.addEventListener('click', () => {
-		if (btnRead.classList.contains('read')) {
-			btnRead.classList.remove('read')
-			btnRead.classList.add('notRead')
-			btnRead.textContent = 'Not read'
-		} else {
-			btnRead.classList.remove('notRead')
-			btnRead.classList.add('read')
-			btnRead.textContent = 'Read'
-		}
-	})
 
 	removeBook.addEventListener('click', e => {
 		let index = myLibrary.indexOf(e.target.parentNode)
